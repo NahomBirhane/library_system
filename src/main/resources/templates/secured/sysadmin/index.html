@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://thymeleaf.org">
 <head th:replace="~{fragments/head-elements :: headElements}"></head>
-  <title>Fairfield Library - System Administration</title>
+  <title>City Library - System Administration</title>
   <style>
     a.sysadmin-card-link {
       text-decoration: inherit;
@@ -12,6 +12,7 @@
   <div id="page-content">
     <header th:replace="~{fragments/header :: header}"></header>
     <main>
+      <div class="container">
       <h2>System Administration</h2>
       <hr>
       <div class="row">
@@ -110,6 +111,7 @@
             </a>
           </div>
         </div>
+      </div>
       </div>
     </main>
     <footer th:replace="~{fragments/footer :: footer}"></footer>

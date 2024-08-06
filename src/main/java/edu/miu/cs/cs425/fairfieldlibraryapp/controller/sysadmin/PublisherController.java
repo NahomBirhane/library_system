@@ -24,12 +24,11 @@ public class PublisherController {
     }
 
     @GetMapping(value = {"/list"})
-    public ModelAndView listPublishers(@RequestParam(defaultValue = "0") int pageNo) {
+    public ModelAndView listPublishers(@RequestParam(defaultValue = "1") int pageNo) {
         var modelAndView = new ModelAndView();
-        var publishers = publisherService.getAllPublishersPaged(pageNo);
+        var publishers = publisherService.getAllPublishersPaged(pageNo-1);
         modelAndView.addObject("publishers", publishers);
-        modelAndView.addObject("currentPageNo", pageNo);
-//        modelAndView.addObject("publishersCount", publishers.size());
+        modelAndView.addObject("currentPageNo", pageNo-1); // This line is correct
         modelAndView.setViewName("secured/sysadmin/publisher/list");
         return modelAndView;
     }

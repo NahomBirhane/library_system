@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -31,7 +32,7 @@ public class PublisherServiceImpl implements PublisherService {
     public Page<Publisher> getAllPublishersPaged(int pageNo) {
         return publisherRepository.findAll(
             PageRequest.of(pageNo,
-                4,
+                3,
                 Sort.by(Sort.Direction.ASC, "name"))
         );
     }
@@ -76,11 +77,14 @@ public class PublisherServiceImpl implements PublisherService {
     @Override
     public List<Publisher> searchPublishers(String searchString) {
 //        return publisherRepository.findByNameContaining(searchString);
-        return publisherRepository.findAllByNameContainingOrPrimaryAddress_StreetContainingOrPrimaryAddress_CityContainingOrPrimaryAddress_StateContainingOrPrimaryAddress_ZipCodeContaining
+        return publisherRepository.findAllByNameContainingOrPrimaryAddress_StreetContainingOrPrimaryAddress_CityContainingOrPrimaryAddress_StateContainingOrPrimaryAddress_ZipCodeContainingOrderByName
                 (
                     searchString, searchString,
                         searchString, searchString, searchString
                 );
+//                .stream()
+//                .sorted(Comparator.comparing(Publisher::getName))
+//                .toList();
     }
     
 }

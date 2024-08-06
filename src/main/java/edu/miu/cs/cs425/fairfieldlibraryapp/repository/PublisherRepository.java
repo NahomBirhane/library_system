@@ -24,7 +24,7 @@ public interface PublisherRepository
     */
     //List<Publisher> findAllPublishersMatchingInputText(String searchString);
     List<Publisher> findByNameContaining(String name);
-    List<Publisher> findAllByNameContainingOrPrimaryAddress_StreetContainingOrPrimaryAddress_CityContainingOrPrimaryAddress_StateContainingOrPrimaryAddress_ZipCodeContaining
+    List<Publisher> findAllByNameContainingOrPrimaryAddress_StreetContainingOrPrimaryAddress_CityContainingOrPrimaryAddress_StateContainingOrPrimaryAddress_ZipCodeContainingOrderByName
             (
                 String name, String street,
                 String city, String state, String zipCode

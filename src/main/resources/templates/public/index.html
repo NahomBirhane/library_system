@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://thymeleaf.org">
 <head th:replace="~{fragments/head-elements :: headElements}"></head>
-    <title>Fairfield Library - Home</title>
+    <title>City Library - Home</title>
 
     <style>
         img#banner-img {
@@ -17,28 +17,35 @@
             border: 2px solid #ababab;
             padding: 0.6em;
         }
+        div#home-text-sections section > h3 {
+            background-color: aquamarine;
+            padding: 0.20em;
+        }
     </style>
 </head>
 <body>
     <div id="page-content">
         <header th:replace="~{fragments/header :: header}"></header>
         <main>
-            <h2>Welcome to Fairfield Library online</h2>
+            <h2>Welcome to the City Library online</h2>
             <hr>
             <div>
                 <img id="banner-img" th:src="@{/images/fairfield-city.jpg}" alt="Fairfield City">
             </div>
             <div id="home-text-sections">
                 <section>
-                    <h3>Article 1</h3>
+                    <h3>Top Page-turners</h3>
+                    <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos expedita esse odio repellendus. Quos reprehenderit velit cum optio ut at odio possimus fuga aliquid libero voluptates, ex assumenda, ipsa sapiente voluptate doloribus esse rem corporis unde nesciunt, vel nemo similique? Corrupti quae neque autem ipsa quibusdam laboriosam repudiandae accusamus!</p>
                 </section>
                 <section>
-                    <h3>Article 2</h3>
+                    <h3>Upcoming Events</h3>
+                    <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos expedita esse odio repellendus. Quos reprehenderit velit cum optio ut at odio possimus fuga aliquid libero voluptates, ex assumenda, ipsa sapiente voluptate doloribus esse rem corporis unde nesciunt, vel nemo similique? Corrupti quae neque autem ipsa quibusdam laboriosam repudiandae accusamus!</p>
                 </section>
                 <section>
-                    <h3>Article 3</h3>
+                    <h3>Our Locations</h3>
+                    <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos expedita esse odio repellendus. Quos reprehenderit velit cum optio ut at odio possimus fuga aliquid libero voluptates, ex assumenda, ipsa sapiente voluptate doloribus esse rem corporis unde nesciunt, vel nemo similique? Corrupti quae neque autem ipsa quibusdam laboriosam repudiandae accusamus!</p>
                 </section>
             </div>
